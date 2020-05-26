@@ -1,7 +1,10 @@
 import os
+import sys
 import evdev
 from evdev import InputDevice, categorize, ecodes
-dev = InputDevice('/dev/input/event21')
+
+device = sys.argv[1]
+dev = InputDevice('/dev/input/'+device)
 dev.grab()
 
 
